@@ -22,4 +22,6 @@
 
 ![Screenshot_20210502-151749](https://i.loli.net/2021/05/02/2I8uOzqT7JR6Dpj.jpg)
 
+下面是在Typecho发布的文章
+
 ![image-20210502153846770](https://i.loli.net/2021/05/02/hI8SUs9yuY2HWiE.png)
