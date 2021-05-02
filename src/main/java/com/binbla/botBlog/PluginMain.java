@@ -2,6 +2,12 @@ package com.binbla.botBlog;
 
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
+import net.mamoe.mirai.event.GlobalEventChannel;
+import net.mamoe.mirai.event.events.FriendMessageEvent;
+import net.mamoe.mirai.event.events.MessageEvent;
+
+import javax.xml.crypto.Data;
+import java.util.Date;
 
 public final class PluginMain extends JavaPlugin {
     public static final PluginMain INSTANCE = new PluginMain();
@@ -15,6 +21,11 @@ public final class PluginMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("Plugin loaded!");
+        GlobalEventChannel.INSTANCE.subscribeAlways(FriendMessageEvent.class, this::handleFMsg);
+        getLogger().info("TypechoBot Plugin loaded!");
+        getLogger().info(""+new Date().getTime()/1000);
+    }
+    void handleFMsg(MessageEvent fMsg){
+        new HandleThread(fMsg);
     }
 }
